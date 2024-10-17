@@ -1,15 +1,13 @@
 import './App.css';
 import Footer from './components/Footer';
+import Header from './components/Header';
+import Main from './components/Main';
 
 function App() {
   return (
     <>
-      <header>
-        <div>Lena BLOG</div>
-        <div>posts</div>
-        <div>contact</div>
-      </header>
-      <main></main>
+      <Header />
+      <Main />
       <Footer />
     </>
   );
