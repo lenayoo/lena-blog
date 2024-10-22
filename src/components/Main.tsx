@@ -1,3 +1,5 @@
+import './style.css';
+
 export default function Main() {
-  return <div>posts</div>;
+  return <div className='main'>posts</div>;
 }
