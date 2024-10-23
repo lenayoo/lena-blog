@@ -35,5 +35,5 @@
   width: 35%;
   gap: 15px;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
 }
