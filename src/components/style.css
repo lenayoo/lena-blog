@@ -27,13 +27,15 @@
   width: 100%;
   margin-top: 5rem;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 20px;
 }
 
 .main-div {
   width: 35%;
   gap: 15px;
   display: flex;
-  /* flex-direction: column; */
+  flex-direction: column;
 }

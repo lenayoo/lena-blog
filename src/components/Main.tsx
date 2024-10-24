@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import './style.css';
+import supabase from '../../supabase';
+import Posts from './Posts';
 
 interface Post {
   title: string;
@@ -17,14 +19,30 @@ export default function Main() {
     setPost({ ...post, content: e.target.value });
   };
 
-  const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
+  const submitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (post.title.trim() === '' || post.content.trim() === '') {
       alert('내용을 입력해 주세요');
       return;
     }
-    setPosts([...posts, post]);
-    setPost({ title: '', content: '' });
+    try {
+      const { error } = await supabase
+        .from('posts')
+        .insert([{ title: post.title, content: post.content }]);
+
+      setPosts([...posts, post]);
+      setPost({ title: '', content: '' });
+
+      if (error) {
+        console.log(error.message);
+      }
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        console.error('Error:', err.message); // 에러 메시지 출력
+      } else {
+        console.error('Unknown error occurred:', err);
+      }
+    }
   };
 
   // console.log(post);
@@ -49,6 +67,7 @@ export default function Main() {
         ></textarea>
         <button>제출하기</button>
       </form>
+      <Posts />
     </div>
   );
 }
