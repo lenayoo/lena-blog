@@ -8,7 +8,7 @@ interface Post {
   content: string;
 }
 
-export default function Main() {
+export default function Write() {
   const [post, setPost] = useState<Post>({ title: '', content: '' });
   const [posts, setPosts] = useState<Post[]>([]);
 
