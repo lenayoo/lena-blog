@@ -67,7 +67,6 @@ export default function Write() {
         ></textarea>
         <button>제출하기</button>
       </form>
-      <Posts />
     </div>
   );
 }

@@ -22,7 +22,7 @@ export default function Posts() {
   }
 
   return (
-    <ul>
+    <ul className='main-content'>
       {posts.map((post) => (
         <>
           <h3>{post.title}</h3>
