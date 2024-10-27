@@ -1,7 +1,6 @@
 import { useState } from 'react';
-import './style.css';
 import supabase from '../../supabase';
-import Posts from './Posts';
+import './style.css';
 
 interface Post {
   title: string;

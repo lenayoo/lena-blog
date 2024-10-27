@@ -7,6 +7,11 @@ export default function Header() {
       <div className='top-logo'>Lena BLOG</div>
       <ul className='top-menu'>
         <li className='top-write'>
+          <li className='top-contact'>
+            <Link to='todo' className='nav-link'>
+              Todo
+            </Link>
+          </li>
           <Link to='/' className='nav-link'>
             posts
           </Link>
